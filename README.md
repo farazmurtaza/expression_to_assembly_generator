@@ -1,4 +1,4 @@
-# Expression Evaluator
+# Expression to Assembly Generator
 
 A C++ program that generates the assembly code for a given expression.
 
