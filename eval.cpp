@@ -27,7 +27,7 @@ void tokenize(string expression)
 {
     for (int i = 0; i < expression.length(); i++)
     {
-        if (expression.at(i) == '+' || expression.at(i) == '-' || expression.at(i) == '*' || expression.at(i) == '/' || expression.at(i) == '%' || expression.at(i) == '(' || expression.at(i) == ')')
+        if (!isdigit(expression.at(i)))
         {
             string s(1, expression.at(i));
             tokens.push_back(s);
@@ -129,7 +129,7 @@ string term2()
 string factor()
 {
 
-    if (tokens[indexOfToken] != "+" && tokens[indexOfToken] != "-" && tokens[indexOfToken] != "*" && tokens[indexOfToken] != "/" && tokens[indexOfToken] != "%" && tokens[indexOfToken] != "(" && tokens[indexOfToken] != ")")
+    if (isdigit(tokens[indexOfToken].at(0)))
     {
         indexOfToken++;
         return "MOV AX, " + tokens[indexOfToken - 1] + "\nPUSH AX\n";
